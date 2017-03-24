@@ -23,5 +23,5 @@ def less(filename):
                                         print line
                                 else:
                                         raw_input()
-					                              sum=sum+1
+					sum=sum+1
                                         continue
