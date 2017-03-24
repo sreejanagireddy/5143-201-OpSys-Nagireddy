@@ -6,11 +6,11 @@ import time
 from  pwd import getpwuid
 from os import stat
 """
-COMMAND NAME       :  ls
-DESCRIPTION        :   List  all files from the current directory.
+COMMAND NAME             :  ls
+DESCRIPTION              :   List  all files from the current directory.
 	-a               :    It shows all the hidden files.
 	-l               :    Displays  long listing.
-  -h               :    Human readable sizes
+        -h               :    Human readable sizes
 """
 def size(size):
         suffixes=['B','KB','MB','GB','TB']
@@ -31,7 +31,7 @@ def ls(var,flag1):
         		for i in list:
                 		if i.startswith('.'):
                				list.remove(i)
-        		 		      list.sort()
+        		 		list.sort()
         			    	for i in list:
             					print i,
             					print "\t",
@@ -41,29 +41,29 @@ def ls(var,flag1):
         		flag=var[1]
         		if flag=='-l':
        			      	list=os.listdir(os.getcwd())
-                  	list.sort()
+                  	        list.sort()
                		 	for i in list:
                 			if i.startswith('.'):
                     				list.remove(i)
-         		 	              for i in range(len(list)):
-                		      	    info=os.stat(list[i])
-                			          atime=time.asctime(time.localtime(info.st_atime))
-                			          name=getpwuid(stat(list[i]).st_uid).pw_name
-                			          permissions = os.stat(list[i]).st_mode
-                		          	p=int(oct(permissions & 0777))
-                		            str=p.__str__()+"\t"+name.__str__()+"\t"+ name.__str__() +"\t"+info.st_size.__str__()+"\t"+atime.__str__()+"\t"+list[i].__str__()
-                			          print str
+         		 	for i in range(len(list)):
+                			info=os.stat(list[i])
+                			atime=time.asctime(time.localtime(info.st_atime))
+                			name=getpwuid(stat(list[i]).st_uid).pw_name
+                			permissions = os.stat(list[i]).st_mode
+                		        p=int(oct(permissions & 0777))
+                		        str=p.__str__()+"\t"+name.__str__()+"\t"+ name.__str__() +"\t"+info.st_size.__str__()+"\t"+atime.__str__()+"\t"+list[i].__str__()
+                			print str
          		elif flag=='-a':
             			list=os.listdir(os.getcwd())
             			list.sort()
             			for i in list:
                				print i,
                			 	print "\t",
-           			 	    print ""
-      	    elif flag=="-la":
+           			 	print ""
+      	                elif flag=="-la":
             			list=os.listdir(os.getcwd())
             			list.sort()
-           			  for i in list:
+           			for i in list:
                 			if i.startswith('.'):
                     				list.remove(i)
             			for i in range(len(list)):
@@ -75,38 +75,38 @@ def ls(var,flag1):
                 			p=int(oct(permissions & 0777))
                 			str=p.__str__()+"\t"+name.__str__()+"\t"+ name.__str__() +"\t"+info.st_size.__str__()+"\t"+atime.__str__()+"\t"+list[i].__str__()
                 			print str
-        		 elif flag=="-ah":
+        		elif flag=="-ah":
             			list=os.listdir(os.getcwd())
             			list.sort()
             			for i in list:
                			 	print i,
                 		 	print "\t",
             			 	print ""
-        		 elif flag=='-lh':
-          		  	  list=os.listdir(os.getcwd())
-            		  	list.sort()
+        	        elif flag=='-lh':
+          		  	list=os.listdir(os.getcwd())
+            		        list.sort()
             		  	for i in range(len(list)):
-                			      info=os.stat(list[i])
+                                	info=os.stat(list[i])
                 
-                    	 			atime=time.asctime(time.localtime(info.st_atime))
+                    	 	        atime=time.asctime(time.localtime(info.st_atime))
               	        		name=getpwuid(stat(list[i]).st_uid).pw_name
-             				        permissions = os.stat(list[i]).st_mode
-                			      p=int(oct(permissions & 0777))
-             				        s=size(info.st_size)
-                			      str=p.__str__()+" "+name.__str__()+" "+ name.__str__() +" "+s.__str__()+" "+atime.__str__()+" "+list[i].__str__()
-                			      print str
-        		  elif flag=='-lah':
+             				permissions = os.stat(list[i]).st_mode
+                			p=int(oct(permissions & 0777))
+             				s=size(info.st_size)
+                			str=p.__str__()+" "+name.__str__()+" "+ name.__str__() +" "+s.__str__()+" "+atime.__str__()+" "+list[i].__str__()
+                			print str
+        		elif flag=='-lah':
             			list=os.listdir(os.getcwd())
             			list.sort()
-           			  for i in range(len(list)):
-                			            info=os.stat(list[i])
+           			 for i in range(len(list)):
+                	         	info=os.stat(list[i])
               	                	atime=time.asctime(time.localtime(info.st_atime))
-                		            	name=getpwuid(stat(list[i]).st_uid).pw_name
-                			            permissions = os.stat(list[i]).st_mode
-                			            p=int(oct(permissions & 0777))
-                			            s=size(info.st_size)
-              				            str=p.__str__()+" "+name.__str__()+" "+ name.__str__() +" "+s.__str__()+" "+atime.__str__()+" "+list[i].__str__()
-                			            print str
+                		        name=getpwuid(stat(list[i]).st_uid).pw_name
+                			permissions = os.stat(list[i]).st_mode
+                			p=int(oct(permissions & 0777))
+                			s=size(info.st_size)
+              				str=p.__str__()+" "+name.__str__()+" "+ name.__str__() +" "+s.__str__()+" "+atime.__str__()+" "+list[i].__str__()
+                			print str
 
 	else:
 		if(flag1==1):
@@ -116,17 +116,17 @@ def ls(var,flag1):
         			list=os.listdir(os.getcwd())
         			for i in list:
                 			if i.startswith('.'):
-               					  list.remove(i)
-        		 			        list.sort()
-        			for i in list:
-					        f.write(i+"\n")
-		     else:
+               		                	list.remove(i)
+        		 			list.sort()
+        					for i in list:
+					        	f.write(i+"\n")
+	        else:
 			
         			flag=var[1]
         			if flag=='-l':
-       			 		    list=os.listdir(os.getcwd())
+       					list=os.listdir(os.getcwd())
             	 	 		list.sort()
-               		 	for i in list:
+               		 		for i in list:
                 				if i.startswith('.'):
                     					list.remove(i)
          		 		for i in range(len(list)):
@@ -136,17 +136,17 @@ def ls(var,flag1):
                 				permissions = os.stat(list[i]).st_mode
                 				p=int(oct(permissions & 0777))
                 				str=p.__str__()+"\t"+name.__str__()+"\t"+ name.__str__() +"\t"+info.st_size.__str__()+"\t"+atime.__str__()+"\t"+list[i].__str__()
-						            f.write(str+"\n")
+						f.write(str+"\n")
          			elif flag=='-a':
             				list=os.listdir(os.getcwd())
             				list.sort()
             				for i in list:
                					
-						            f.write(i+"\n")
+			                	f.write(i+"\n")
 			       	elif flag=="-la":
             				list=os.listdir(os.getcwd())
             				list.sort()
-           				  for i in list:
+           				for i in list:
                 				if i.startswith('.'):
                     					list.remove(i)
             				for i in range(len(list)):
@@ -158,37 +158,36 @@ def ls(var,flag1):
                 				p=int(oct(permissions & 0777))
                 				str=p.__str__()+"\t"+name.__str__()+"\t"+ name.__str__() +"\t"+info.st_size.__str__()+"\t"+atime.__str__()+"\t"+list[i].__str__()
                 				#print str
-					            	f.write(str)
+					        f.write(str)
         			elif flag=="-ah":
             				list=os.listdir(os.getcwd())
             				list.sort()
             				for i in list:
                			 		
-						            f.write(i+"\t")
-				      elif flag=='-lh':
-          		  		  list=os.listdir(os.getcwd())
+			                	f.write(i+"\t")
+			        elif flag=='-lh':
+          		  		list=os.listdir(os.getcwd())
             		  		list.sort()
             		  		for i in range(len(list)):
                 				      info=os.stat(list[i])
                 
                	 				      atime=time.asctime(time.localtime(info.st_atime))
-              	        			name=getpwuid(stat(list[i]).st_uid).pw_name
-             					        permissions = os.stat(list[i]).st_mode
+              	        		              name=getpwuid(stat(list[i]).st_uid).pw_name
+             					      permissions = os.stat(list[i]).st_mode
                 				      p=int(oct(permissions & 0777))
-             					        s=size(info.st_size)
+             					      s=size(info.st_size)
                 				      str=p.__str__()+" "+name.__str__()+" "+ name.__str__() +" "+s.__str__()+" "+atime.__str__()+" "+list[i].__str__()
                 				
-						                  f.write(str+"\n")
-				      elif flag=='-lah':
+						      f.write(str+"\n")
+				elif flag=='-lah':
             				list=os.listdir(os.getcwd())
             				list.sort()
-           				  for i in range(len(list)):
-                				            info=os.stat(list[i])
+           				for i in range(len(list)):
+                	                	info=os.stat(list[i])
               	                		atime=time.asctime(time.localtime(info.st_atime))
-                				            name=getpwuid(stat(list[i]).st_uid).pw_name
-                				            permissions = os.stat(list[i]).st_mode
-                				            p=int(oct(permissions & 0777))
-                				            s=size(info.st_size)
-              					            str=p.__str__()+" "+name.__str__()+" "+ name.__str__() +" "+s.__str__()+" "+atime.__str__()+" "+list[i].__str__()
-                				
-						                        f.write(str+"\n")
+                				name=getpwuid(stat(list[i]).st_uid).pw_name
+                				permissions = os.stat(list[i]).st_mode
+                				p=int(oct(permissions & 0777))
+                		                s=size(info.st_size)
+              		      	                str=p.__str__()+" "+name.__str__()+" "+ name.__str__() +" "+s.__str__()+" "+atime.__str__()+" "+list[i].__str__()
+                				f.write(str+"\n")
