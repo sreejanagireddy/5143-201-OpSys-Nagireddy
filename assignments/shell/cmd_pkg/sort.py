@@ -28,4 +28,4 @@ def sortapp(file1,file2):
          with open(file1,'r') as r:
 		            f2=open(file2,'a')
                             for line in sorted(r):
-                           	 f2.write(line)
+                            	f2.write(line)
