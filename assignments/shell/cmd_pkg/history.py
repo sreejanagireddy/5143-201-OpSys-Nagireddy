@@ -2,7 +2,7 @@ import sys
 import os
 """
 COMMAND NAME 	  :  history
-DESCRIPTION     :  It is used to show history of all commands in the file.
+DESCRIPTION       :  It is used to show history of all commands in the file.
 """
 def history(cmd):
         a=open("/home/opsys_group05/history1.txt",'r')
