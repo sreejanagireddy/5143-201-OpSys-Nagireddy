@@ -13,11 +13,11 @@ def grep(keyword,file,flag):
 		
 		        for line in f:
 			            if keyword in line:
-                		  list.append(line)
-		    f.close()
-		    f1=open("default.txt",'w')
-		    for lines in list:
-			        f1.write(lines)
+                		    	list.append(line)
+		                        f.close()
+		                        f1=open("default.txt",'w')
+		                        for lines in list:
+			                f1.write(lines)
 	      else:
             		for line in f:
 				if keyword in line:
