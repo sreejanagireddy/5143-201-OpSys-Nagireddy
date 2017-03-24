@@ -17,10 +17,10 @@ def cd(directory):
 	      os.chdir(home)
 	      new=os.getcwd()            	
         print(new)
-	else:
+  else:
 		  if os.path.isdir(directory):
 			    os.chdir(directory)
 			    new=os.getcwd()
 			    print(new)
-      else:
+                  else:
 			        print("directory does not exists")
